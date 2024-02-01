@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
+import { connectToDB } from "@utils/database";
+
 const handler = NextAuth({
   providers: [
     GoogleProvider({
@@ -12,6 +14,16 @@ const handler = NextAuth({
 
   async signIn({ profile }) {
     try {
-    } catch (error) {}
+      await connectToDB();
+
+      // check if the user has an account, aka already exists
+
+      // if not, then create a new use
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   },
 });
