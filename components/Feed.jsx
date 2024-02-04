@@ -4,8 +4,7 @@ const Feed = () => {
   return <div>Feed</div>;
   return (
     <div>
-      {" "}
-      <h1>test</h1>
+      <h1>Feed</h1>
     </div>
   );
 };
